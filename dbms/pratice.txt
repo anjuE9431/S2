@@ -1,0 +1,33 @@
+create table books(
+    -> bookid integer Primary Key,
+    -> title varchar(100) NOT NULL,
+    -> author varchar(50) NOT NULL,
+    -> price decimal(6,2) DEFAULT 0.00);
+
+
+
+
+
+create table students(
+    -> studentid integer Primary Key, 
+    -> name varchar(100) NOT NULL,
+    -> course varchar(50) DEFAULT 'MCA',
+    -> age int,
+    -> check(age>20 and age<40)
+    -> );
+
+
+alter table books  add publication_date date;
+
+
+
+alter table books modify price decimal(5,2) DEFAULT 100.00;
+
+
+
+insert into books(bookid,title,author,price,publication_date)
+    -> values(1, 'Database Systems',' Ramez Elmasri', 500.00,'1976-10-10'),
+    -> (2,'Operating System Concepts','Silberschatz',650.00,'1960-11-20'),
+    -> (3, 'Computer Networks', 'Andrew S. Tanenbaum',700.00,'2000-02-17'),
+    -> (4,'Algorithms', 'Cormen',default,'2011-01-23');
+
