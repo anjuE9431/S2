@@ -1,0 +1,55 @@
+-- 
+-- Roll No: 06
+-- Name: Anju E
+-- Program: 
+-- 
+
+
+--
+-- Table structure for table books
+--
+
+create table books(bookid int primary key,title varchar(100) not null,author varchar(50) not null,price decimal(5,2) default 0.00);
+alter table books add publication_date int;
+
+alter table books drop publication_date;
+
+
+--
+-- Table structure for table students
+--
+
+create table students(studentid int primary key,name varchar(100) not null,course varchar(50) default 'MCA',age int,check (age>=20 AND age<=40));
+
+drop table students;
+
+--
+-- Dumping data for table books
+--
+
+insert into books values(1,'Database System','Ramez Elmasri',500.00,'1976-10-10'),(2,'Operating System Concepts','Silberschatz',650,'1960-11-20'),(3,'Computer Networks','Andrew S.Tanenbaum',700,'2000-02-17');
+
+insert into books(bookid,title,author,publication_date) values(4,'Algorithms','Cormen','2011-01-23');
+
+update books set price=700 where title="Operating System Concepts";
+
+delete from books where bookid=3;
+
+update price from books set price=price*1.1;
+
+
+
+--
+-- Dumping data for table students
+--
+insert into students values(101,'Midhun K','MCA',22),(102,'Ann Mariya','MCA',30),(103,'Sidharth M','MCA',21);
+
+
+
+
+--
+-- SQl Query Statements
+--
+
+-- -----SQL query statments preceeded by the its question-------- # This line may be removed in the actual file
+-- -----Question number should be commented---------------#This line may be removed in the actual file
