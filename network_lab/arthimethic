@@ -1,0 +1,21 @@
+perform_operation() {
+    case $operator in
+        1)
+            result=$((num1 + num2))
+            echo "Result of addition: $result"
+            ;;
+        2)
+            result=$((num1 - num2))
+            echo "Result of subtraction: $result"
+            ;;
+        3)
+            result=$((num1 * num2))
+            echo "Result of multiplication: $result"
+            ;;
+        4)
+            if [ $num2 -eq 0 ]; then
+                echo "Error: Division by zero is not allowed."
+            else
+                result=$((num1 / num2))
+                echo "Result of division: $result"
+            fi
