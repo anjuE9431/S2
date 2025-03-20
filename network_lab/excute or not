@@ -1,0 +1,26 @@
+
+read -p "Enter the file name: " file_name
+
+
+if [ -e "$file_name" ]; then
+    # Check each permission individually
+    if [ -r "$file_name" ]; then
+        echo "'$file_name' has read permission."
+    else
+        echo "'$file_name' does not have read permission."
+    fi
+
+    if [ -w "$file_name" ]; then
+        echo "'$file_name' has write permission."
+    else
+        echo "'$file_name' does not have write permission."
+    fi
+
+    if [ -x "$file_name" ]; then
+        echo "'$file_name' has execute permission."
+    else
+        echo "'$file_name' does not have execute permission."
+    fi
+else
+    echo "'$file_name' does not exist."
+fi
