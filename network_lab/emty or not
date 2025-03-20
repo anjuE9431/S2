@@ -1,0 +1,13 @@
+
+read -p "Enter the file name: " file_name
+
+
+if [ -e "$file_name" ]; then
+    if [ -s "$file_name" ]; then
+        echo "'$file_name' is not empty."
+    else
+        echo "'$file_name' is empty."
+    fi
+else
+    echo "'$file_name' does not exist."
+fi
