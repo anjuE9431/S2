@@ -1,0 +1,8 @@
+for file in *; do
+  # Check if it is a regular file
+  if [[ -f $file ]]; then
+    # Use sed to remove all digits from the file
+    sed -i 's/[-]//g' "$file"
+    echo "Removed digits from $file"
+  fi
+done
